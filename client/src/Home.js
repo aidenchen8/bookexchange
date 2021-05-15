@@ -19,9 +19,9 @@ export class Home extends React.Component {
 
     componentDidMount = () => {
         this.updateBookList();
-        this.timer=window.setInterval(()=>{
-            this.updateBookList()
-        }, 3000);
+        // this.timer=window.setInterval(()=>{
+        //     this.updateBookList()
+        // }, 3000);
     }
 
     componentWillUnmount = () => {

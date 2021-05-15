@@ -80,9 +80,9 @@ export class Launch extends React.Component {
 
         this.updateList();
         
-        this.refreshTimer=window.setInterval(()=>{
-            this.updateList()
-        }, 3000);
+        // this.refreshTimer=window.setInterval(()=>{
+        //     this.updateList()
+        // }, 3000);
     }
 
     componentWillUnmount = () => {
@@ -394,7 +394,7 @@ export class Message extends React.Component {
                 }).catch((error) => {
                     message.error("No message found");
                 });
-            }, 3000);
+            }, 2000);
         }
 
 
