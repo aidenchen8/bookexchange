@@ -1,0 +1,55 @@
+.site-layout-content {
+  min-height: 280px;
+  background: #fff;
+  padding:20px 0 ;
+}
+.ant-card{
+  width: 60vw;
+}
+.ant-layout-header{
+  padding: 0 35px!important;
+}
+.logo {
+  font-size: larger;
+  font-weight: bold;
+/* change default styles */
+  color: #fff!important;
+  background-color: #001529!important;
+  cursor:default!important;
+}
+
+.ant-row-rtl #components-layout-demo-top .logo {
+  float: right;
+  margin: 16px 0 16px 24px;
+}
+
+/* list style */
+.ant-list-item-meta-title{
+  overflow:hidden; 
+  text-overflow:ellipsis; 
+  white-space:nowrap; 
+}
+
+.ant-list-item-meta-description{
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+.ant-descriptions-item-content{
+  max-width: 40vw;
+}
+.ant-list-item-action{
+  flex: unset!important;
+  margin-left: 10px!important;
+}
+.ant-list-item-action > li:first-child{
+  padding-left: 8px!important;
+}
+.ant-list-item-action > li{
+  margin: 10px 0;
+}
+
+.ant-form-item-with-help{
+  margin-bottom: 24px!important;
+}
+

@@ -1,0 +1,78 @@
+POST http://localhost:9091/api/register?&name=abc&password=abc
+Content-Type: application/json
+
+{
+    "email": "seller2@ms.com",
+    "name":"abc def",
+    "password":"123"
+}
+###
+GET http://localhost:9091/api/user?email=seller@ms.com
+
+###
+
+GET http://localhost:9091/api/login?email=seller@ms.com&name=seller&password=abc
+
+
+######
+
+POST  http://localhost:9091/api/publish
+Content-Type: application/json
+
+{
+    "title": "New Book",
+    "description": "my favourite book",
+    "category": "read",
+    "seller": "abc@qq.edu.com",
+    "price": "1.2"
+}
+
+###
+
+GET http://localhost:9091/api/list/all
+
+
+###
+GET http://localhost:9091/api/lock?buyer=buyer@qq.edu.com&book=6083d16a60a1d925848da768
+
+###
+GET http://localhost:9091/api/list/mine?seller=seller@ms.com
+
+###
+GET http://localhost:9091/api/list/buy?buyer=seller@ms.com
+
+###
+GET http://localhost:9091/api/exchange?book=6083d16a60a1d925848da768
+
+###
+GET http://localhost:9091/api/sold?book=6083d16a60a1d925848da768
+
+
+###
+GET http://localhost:9091/api/cancel?book=6083d16a60a1d925848da768
+
+###
+
+GET http://localhost:9091/api/delete?book=60858d97193c1a2174e02484
+###
+POST  http://localhost:9091/api/review
+Content-Type: application/json
+
+{
+    "book": "6083d16a60a1d925848da768",
+    "review": "I like this book"
+}
+
+###
+
+GET http://localhost:9091/api/chat/receive?from=seller@qq.edu.cn&to=buyer@qq.edu.cn
+
+###
+POST http://localhost:9091/api/chat/send
+Content-Type: application/json
+
+{
+    "from": "buyer@ms.com",
+    "to": "seller@ms.com",
+    "message": "Hello I like this book"
+}
