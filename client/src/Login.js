@@ -35,24 +35,30 @@ export class Login extends React.Component {
 
     onRegister = (values) => {
         console.log('Success:', values);
-        if (values.register_password === values.register_password_confirm) {
-            axios.post(`${url.base}/register`, {
-                email: values.register_email,
-                password: md5(values.register_password),
-                name: values.register_full_name
-            }).then((response) => {
-                console.log(response);
-                if (response.data === "ok") {
-                    message.info('Register successfully');
-                } else {
+        let emailarr = values.register_email.split("@");
+        let emailend = emailarr[emailarr.length-1];
+        if(emailend == "soton.ac.uk"){
+            if (values.register_password === values.register_password_confirm) {
+                axios.post(`${url.base}/register`, {
+                    email: values.register_email,
+                    password: md5(values.register_password),
+                    name: values.register_full_name
+                }).then((response) => {
+                    console.log(response);
+                    if (response.data === "ok") {
+                        message.info('Register successfully');
+                    } else {
+                        message.error('Register failed');
+                    }
+                }).catch(function (error) {
                     message.error('Register failed');
-                }
-            }).catch(function (error) {
-                message.error('Register failed');
-                console.log(error);
-            });
-        } else {
-            message.error('Please confirm your password');
+                    console.log(error);
+                });
+            } else {
+                message.error('Please confirm your password');
+            }
+        }else {
+            message.error('Please use you university email');
         }
     };
 
@@ -94,7 +100,7 @@ export class Login extends React.Component {
             onFinishFailed={this.onFinishFailed}
         >
             <Form.Item
-                label="Email"
+                label="University Email"
                 name="email"
                 rules={[{type: 'email', required: true, message: 'Please input your email!' }]}
             >
@@ -131,7 +137,7 @@ export class Login extends React.Component {
             onFinishFailed={this.onFinishFailed}
         >
             <Form.Item
-                label="Email"
+                label="University Email"
                 name="register_email"
                 rules={[{type: 'email', required: true, message: 'Please input your email!' }]}
             >
